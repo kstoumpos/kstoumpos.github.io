@@ -1,344 +1,688 @@
-/* =====================================
-Template Name: Meheraj
-Author Name: Shakil Hossain
-Description: Meheraj is a modern Creative Personal Portfolio Template, you can use this template for your own personal portfolio,CV,Resume purpouse.
-Version:	1.1
-========================================*/   
-/*======================================
-[Start Activation Code]
-========================================
-	* One Page Nav
-	* Sticky JS
-	* Mobile Menu
-	* Social JS
-	* Service hover
-	* Isotop Active
-	* Counter JS
-	* Testimonial Carousel
-	* Blog Carousel
-	* Blog Slider
-	* Clients Carousel
-	* Wow JS
-	* Parallax JS
-	* Video Background
-	* Side Navigation
-	* Personal slider
-	* Extra JS
-	* Preloader JS
-========================================
-[End Activation Code]
-========================================*/ 
-(function ($) {
-	"use strict";
-    $(document).ready(function(){
-		
-		function Maheraz_Custom_JS() {
-			var windowS = $(window),
-				windowH = windowS.height(),
-				projecthoverS = $('.portfolio-hover'),
-				projecthoverH = projecthoverS.height(),
-				proejectdevide = (projecthoverH / 2);
-				projecthoverS.css({
-				marginTop: -proejectdevide,
-			});
-		}; 
-		
-		/*====================================
-		//  Onepage Nav
-		======================================*/ 
-		if ($.fn.onePageNav) {
-			$('.mainmenu .nav').onePageNav({
-				currentClass: 'active',
-				scrollSpeed: 1000,
-				easing: 'easeInOutQuart'
-			});
-		}
-		
-		/*====================================
-		// Sticky JS
-		======================================*/ 
-		jQuery(window).on('scroll', function() {
-			if ($(this).scrollTop() > 1) {
-				$('#header').addClass("sticky");
-			} else {
-				$('#header').removeClass("sticky");
-			}
-		});
-			
-		/*====================================
-		// 	Mobile Menu
-		======================================*/ 	
-		$('.menu').slicknav({
-			prependTo:".mobile-nav",
-			closeOnClick:true,
-		});
-		
-		/*====================================
-		// 	Social JS
-		======================================*/ 	
-		$('.social-icon li a').on( "click", function(){
-			$('.social').toggleClass('active');
-		});
-		
-		
-		/*====================================
-		// Service Hover
-		======================================*/ 
-		$('.single-service').on('mouseenter', function(){
-			$(' .single-service').removeClass('active');
-			$(this).addClass('active');
-		});
-		
-		/*====================================
-		// Isotop Active
-		======================================*/
-		$(window).on('load', function() {
-			Maheraz_Custom_JS();		
-			
-			if ($.fn.isotope) {
-                $(".isotop-active").isotope({
-                    filter: '*',
-                });
+/* -------------------------------------------
 
-					$('.portfolio-nav ul li').on('click', function() {
-                    $(".portfolio-nav ul li").removeClass("active");
-                    $(this).addClass("active");
+Name: 		Arter
+Version:  1.0
+Author:		Nazar Miller (millerDigitalDesign)
+Portfolio:  https://themeforest.net/user/millerdigitaldesign/portfolio?ref=MillerDigitalDesign
 
-                    var selector = $(this).attr('data-filter');
-                    $(".isotop-active").isotope({
-                        filter: selector,
-                        animationOptions: {
-                            duration: 750,
-                            easing: 'easeInOutQuart',
-                            queue: false,
-                        }
-                    });
-                    return false;
-                });
-            }
-		});
-		
-		/*====================================
-			Counter JS
-		======================================*/ 
-		$('.count').counterUp({
-			time: 1000
-		});
-		
-		/*====================================
-		// Testimonial Carousel
-		======================================*/ 	
-		$(".testimonial-carousel").owlCarousel({
-			loop:true,
-			autoplay:false,
-			smartSpeed: 600,
-			animateOut: 'flipOutX',
-			animateIn: 'flipInX',
-			margin:30,
-			nav:true,
-			dots:false,
-			items: 1,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-		});	
-		
-		/*====================================
-		// Blog Carousel
-		======================================*/ 	
-		$(".blog-carousel").owlCarousel({
-			loop:true,
-			autoplay:false,
-			autoplayTimeout:4000,
-			smartSpeed: 600,
-			margin:15,
-			nav:false,
-			dots:true,
-			responsive:{
-				300: {
-					items: 1,
-				},
-				480: {
-					items: 1,
-				},
-				768: {
-					items: 2,
-				},
-				1170: {
-					items: 3,
-				},
-			}
-		});	
-		
-		/*====================================
-		// Blog Slider
-		======================================*/ 	
-		$("#blog .slide").owlCarousel({
-			loop:true,
-			autoplay:true,
-			autoplayTimeout:3500,
-			smartSpeed: 600,
-			mouseDrag: true,
-			nav:true,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-			dots:true,
-			responsive:{
-				320: {
-					items: 1,
-					dots:false,
-					nav:false,
-				},
-				480: {
-					items: 1,
-					dots:false,
-					nav:false,
-				},
-				768: {
-					items: 1,
-				},
-				1170: {
-					items: 1,
-				},
-			}
-		});	
-		
-		
-		/*====================================
-		// clients Carousel
-		======================================*/ 	
-		$(".clients-slider").owlCarousel({
-			loop:true,
-			autoplay:false,
-			smartSpeed: 600,
-			margin:30,
-			nav:false,
-			dots:false,
-			responsive:{
-				300: {
-					items: 1,
-				},
-				480: {
-					items: 2,
-				},
-				768: {
-					items: 3,
-				},
-				1170: {
-					items: 5,
-				},
-			}
-		});	
-		
-		/*====================================
-			Wow JS
-		======================================*/		
-		var window_width = $(window).width();   
-			if(window_width > 767){
-            new WOW().init();
-		}
-		
-		/*======================================
-		// Parallax JS
-		======================================*/ 
-		 $(window).stellar({
-            responsive: true,
-            positionProperty: 'position',
-            horizontalScrolling: false
-        });
-		
-		
-		/*====================================
-		// 	Side Navigation
-		======================================*/ 	
-		$('.side-icon a').on( "click", function(){
-			$('#header').toggleClass('active');
-		});
-		
-		/*====================================
-		// Personal Slider
-		======================================*/ 	
-		$(".personal-main.slide").owlCarousel({
-			loop:true,
-			autoplay:true,
-			animateIn: 'fadeIn',
-			animateOut: 'fadeOut',
-			smartSpeed: 600,
-			autoplayTimeout:4000,
-			mouseDrag: false,
-			margin:30,
-			nav:false,
-			dots:true,
-			items: 1,
-		});	
-		
-		/*====================================
-		// Portfolio Single
-		======================================*/ 	
-		$(".portfolio-single.slider").owlCarousel({
-			loop:true,
-			autoplay:true,
-			smartSpeed: 600,
-			autoplayTimeout:3500,
-			mouseDrag: true,
-			margin:30,
-			nav:true,
-			navText: ['<i class="fa fa-angle-left" aria-hidden="true"></i>', '<i class="fa fa-angle-right" aria-hidden="true"></i>'],
-			dots:false,
-			items: 1,
-		});	
-		
-		/*====================================
-		// Related Portfolio
-		======================================*/ 
-		$(".portfolio-related").owlCarousel({
-			loop:true,
-			autoplay:true,
-			smartSpeed: 600,
-			autoplayTimeout:3500,
-			mouseDrag: true,
-			nav:false,
-			dots:false,
-			items: 1,
-			responsive:{
-				300: {
-					items: 1,
-				},
-				480: {
-					items: 1,
-				},
-				768: {
-					items: 2,
-				},
-				1170: {
-					items: 3,
-				},
-			}
-		});	
+p.s. I am available for Freelance hire (UI design, web development). mail: miller.themes@gmail.com
 
-		
-		/*====================================
-		Extra JS
-		======================================*/
-		$('.btn, .arrow a, .slicknav_menu li a').on('click', function(event) {
-			var $anchor = $(this);
-			$('html, body').stop().animate({
-				scrollTop: $($anchor.attr('href')).offset().top - 20 
-			}, 1000, 'easeInOutQuart');
-			event.preventDefault();
-		});
-		
-		
-		/*====================================
-			Video Background
-		======================================*/
-		$('.player').mb_YTPlayer();		
-		
+------------------------------------------- */
+$(function() {
+
+  "use strict";
+
+  // swup js
+  const options = {
+    containers: ["#swup", "#swupMenu"],
+    animateHistoryBrowsing: true,
+  };
+
+  const swup = new Swup(options);
+
+  // scrollbar
+  Scrollbar.use(OverscrollPlugin);
+  Scrollbar.init(document.querySelector('#scrollbar'), {
+    damping: 0.05,
+    renderByPixel: true,
+    continuousScrolling: true,
+  });
+  Scrollbar.init(document.querySelector('#scrollbar2'), {
+    damping: 0.05,
+    renderByPixel: true,
+    continuousScrolling: true,
+  });
+
+  // page loading
+  $(document).ready(function() {
+    anime({
+      targets: '.art-preloader .art-preloader-content',
+      opacity: [0, 1],
+      delay: 200,
+      duration: 600,
+      easing: 'linear',
+      complete: function(anim) {
+
+      }
     });
-	
-	/*======================================
-	// Preloader
-	======================================*/ 	
-		$(window).load(function(){
-				$('.loader').fadeOut('slow', function(){
-				$(this).remove();
-			});
-		});
-})(jQuery);	
+    anime({
+      targets: '.art-preloader',
+      opacity: [1, 0],
+      delay: 2200,
+      duration: 400,
+      easing: 'linear',
+      complete: function(anim) {
+        $('.art-preloader').css('display', 'none');
+      }
+    });
+  });
+
+  var bar = new ProgressBar.Line(preloader, {
+    strokeWidth: 1.7,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 750,
+    trailWidth: 1.7,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(1);
+
+  // counters
+  anime({
+    targets: '.art-counter-frame',
+    opacity: [0, 1],
+    duration: 800,
+    delay: 2300,
+    easing: 'linear',
+  });
+
+  anime({
+    targets: '.art-counter',
+    delay: 1300,
+    opacity: [1, 1],
+    complete: function(anim) {
+      $('.art-counter').each(function() {
+        $(this).prop('Counter', 0).animate({
+          Counter: $(this).text()
+        }, {
+          duration: 2000,
+          easing: 'linear',
+          step: function(now) {
+            $(this).text(Math.ceil(now));
+          }
+        });
+      });
+    }
+  });
+
+  // progressbars
+  var bar = new ProgressBar.Circle(circleprog1, {
+    strokeWidth: 7,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 2500,
+    trailWidth: 7,
+    step: function(state, circle) {
+      var value = Math.round(circle.value() * 100);
+      if (value === 0) {
+        circle.setText('');
+      } else {
+        circle.setText(value);
+      }
+    }
+  });
+
+  bar.animate(1);
+
+  var bar = new ProgressBar.Circle(circleprog2, {
+    strokeWidth: 7,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 2600,
+    trailWidth: 7,
+    step: function(state, circle) {
+      var value = Math.round(circle.value() * 100);
+      if (value === 0) {
+        circle.setText('');
+      } else {
+        circle.setText(value);
+      }
+    }
+  });
+
+  bar.animate(0.9);
+
+  var bar = new ProgressBar.Circle(circleprog3, {
+    strokeWidth: 7,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 2700,
+    trailWidth: 7,
+    step: function(state, circle) {
+      var value = Math.round(circle.value() * 100);
+      if (value === 0) {
+        circle.setText('');
+      } else {
+        circle.setText(value);
+      }
+    }
+  });
+
+  bar.animate(0.7);
+
+  var bar = new ProgressBar.Line(lineprog1, {
+    strokeWidth: 1.72,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 2800,
+    trailWidth: 1.72,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(.9);
+
+  var bar = new ProgressBar.Line(lineprog2, {
+    strokeWidth: 1.72,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 2900,
+    trailWidth: 1.72,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(.95);
+
+  var bar = new ProgressBar.Line(lineprog3, {
+    strokeWidth: 1.72,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 3000,
+    trailWidth: 1.72,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(.75);
+
+  var bar = new ProgressBar.Line(lineprog4, {
+    strokeWidth: 1.72,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 3100,
+    trailWidth: 1.72,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(.65);
+
+  var bar = new ProgressBar.Line(lineprog5, {
+    strokeWidth: 1.72,
+    easing: 'easeInOut',
+    duration: 1400,
+    delay: 3200,
+    trailWidth: 1.72,
+    svgStyle: {
+      width: '100%',
+      height: '100%'
+    },
+    step: (state, bar) => {
+      bar.setText(Math.round(bar.value() * 100) + ' %');
+    }
+  });
+
+  bar.animate(.85);
+
+  // Contact form
+  $('.art-input').keyup(function() {
+    if ($(this).val()) {
+      $(this).addClass('art-active');
+    } else {
+      $(this).removeClass('art-active');
+    }
+  });
+
+  $("#form").submit(function() {
+    $.ajax({
+      type: "POST",
+      url: "mail.php",
+      data: $(this).serialize()
+    }).done(function() {
+
+      var tl = anime.timeline({
+        easing: 'easeOutExpo',
+      });
+
+      tl
+        .add({
+          targets: '.art-submit',
+          opacity: 0,
+          scale: .5,
+        })
+        .add({
+          targets: '.art-success',
+          scale: 1,
+          height: '45px',
+        })
+    });
+    return false;
+  });
+
+  // portfolio filter
+  $('.art-filter a').on('click', function() {
+    $('.art-filter .art-current').removeClass('art-current');
+    $(this).addClass('art-current');
+
+    var selector = $(this).data('filter');
+    $('.art-grid').isotope({
+      filter: selector
+    });
+    return false;
+  });
+
+  // masonry Grid
+  $('.art-grid').isotope({
+    filter: '*',
+    itemSelector: '.art-grid-item',
+    transitionDuration: '.6s',
+  });
+
+  // slider testimonials
+  var swiper = new Swiper('.art-testimonial-slider', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    speed: 1400,
+    autoplay: false,
+    autoplaySpeed: 5000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.art-testi-swiper-next',
+      prevEl: '.art-testi-swiper-prev',
+    },
+    breakpoints: {
+      1500: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
+  // slider works
+  var swiper = new Swiper('.art-works-slider', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    speed: 1400,
+    autoplay: {
+      delay: 4000,
+    },
+    autoplaySpeed: 5000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.art-works-swiper-next',
+      prevEl: '.art-works-swiper-prev',
+    },
+    breakpoints: {
+      1500: {
+        slidesPerView: 2,
+      },
+      1200: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
+  // slider blog
+  var swiper = new Swiper('.art-blog-slider', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    speed: 1400,
+    autoplay: {
+      delay: 4000,
+    },
+    autoplaySpeed: 5000,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.art-blog-swiper-next',
+      prevEl: '.art-blog-swiper-prev',
+    },
+    breakpoints: {
+      1500: {
+        slidesPerView: 3,
+      },
+      1200: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 1,
+      },
+    },
+  });
+
+  $('[data-fancybox="gallery"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "share",
+      "slideShow",
+      "thumbs",
+      "close"
+    ],
+  });
+
+  $('[data-fancybox="diplome"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "thumbs",
+      "close",
+    ],
+  });
+
+  $('[data-fancybox="avatar"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "close"
+    ],
+  });
+
+  $('[data-fancybox="recommendation"]').fancybox({
+    animationEffect: "zoom-in-out",
+    animationDuration: 600,
+    transitionDuration: 1200,
+    buttons: [
+      "zoom",
+      "slideShow",
+      "thumbs",
+      "close",
+    ],
+  });
+
+  $.fancybox.defaults.hash = false;
+
+  $('.current-menu-item a').clone().appendTo('.art-current-page');
+
+  $('.art-map-overlay').on('click', function() {
+    $(this).addClass('art-active');
+  });
+
+  $('.art-info-bar-btn').on('click', function() {
+    $('.art-info-bar').toggleClass('art-active');
+    $('.art-menu-bar-btn').toggleClass('art-disabled');
+  });
+
+  $('.art-menu-bar-btn').on('click', function() {
+    $('.art-menu-bar-btn , .art-menu-bar').toggleClass("art-active");
+    $('.art-info-bar-btn').toggleClass('art-disabled');
+  });
+
+  $('.art-info-bar-btn , .art-menu-bar-btn').on('click', function() {
+    $('.art-content').toggleClass('art-active');
+  });
+
+  $('.art-curtain , .art-mobile-top-bar').on('click', function() {
+    $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+  });
+
+  $('.menu-item').on('click', function() {
+    if ($(this).hasClass('menu-item-has-children')) {
+      $(this).children('.sub-menu').toggleClass('art-active');
+    } else {
+      $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+    }
+  });
+
+  // reinit
+  document.addEventListener("swup:contentReplaced", function() {
+
+    Scrollbar.use(OverscrollPlugin);
+    Scrollbar.init(document.querySelector('#scrollbar'), {
+      damping: 0.05,
+      renderByPixel: true,
+      continuousScrolling: true,
+    });
+    Scrollbar.init(document.querySelector('#scrollbar2'), {
+      damping: 0.05,
+      renderByPixel: true,
+      continuousScrolling: true,
+    });
+
+    $("#form").submit(function() {
+      $.ajax({
+        type: "POST",
+        url: "mail.php",
+        data: $(this).serialize()
+      }).done(function() {
+
+        var tl = anime.timeline({
+          easing: 'easeOutExpo',
+        });
+
+        tl
+          .add({
+            targets: '.art-submit',
+            opacity: 0,
+            scale: .5,
+          })
+          .add({
+            targets: '.art-success',
+            scale: 1,
+            height: '45px',
+          })
+      });
+      return false;
+    });
+
+    // Masonry Grid
+    $('.art-grid').isotope({
+      filter: '*',
+      itemSelector: '.art-grid-item',
+      transitionDuration: '.6s',
+    });
+
+    $('.art-filter a').on('click', function() {
+      $('.art-filter .art-current').removeClass('art-current');
+      $(this).addClass('art-current');
+
+      var selector = $(this).data('filter');
+      $('.art-grid').isotope({
+        filter: selector
+      });
+      return false;
+    });
+
+    anime({
+      targets: '.art-counter-frame',
+      opacity: [0, 1],
+      duration: 800,
+      delay: 300,
+      easing: 'linear',
+    });
+
+    $('.art-counter').each(function() {
+      $(this).prop('Counter', 0).animate({
+        Counter: $(this).text()
+      }, {
+        duration: 2000,
+        easing: 'linear',
+        step: function(now) {
+          $(this).text(Math.ceil(now));
+        }
+      });
+    });
+
+    // slider testimonials
+    var swiper = new Swiper('.art-testimonial-slider', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 1400,
+      autoplay: false,
+      autoplaySpeed: 5000,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.art-testi-swiper-next',
+        prevEl: '.art-testi-swiper-prev',
+      },
+      breakpoints: {
+        1500: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 2,
+        },
+        768: {
+          slidesPerView: 1,
+        }
+      },
+    });
+
+    // slider works
+    var swiper = new Swiper('.art-works-slider', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 1400,
+      autoplay: {
+        delay: 4000,
+      },
+      autoplaySpeed: 5000,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.art-works-swiper-next',
+        prevEl: '.art-works-swiper-prev',
+      },
+      breakpoints: {
+        1500: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 2,
+        },
+        992: {
+          slidesPerView: 1,
+        },
+      },
+    });
+
+    // slider blog
+    var swiper = new Swiper('.art-blog-slider', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+      speed: 1400,
+      autoplay: {
+        delay: 4000,
+      },
+      autoplaySpeed: 5000,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.art-blog-swiper-next',
+        prevEl: '.art-blog-swiper-prev',
+      },
+      breakpoints: {
+        1500: {
+          slidesPerView: 3,
+        },
+        1200: {
+          slidesPerView: 3,
+        },
+        992: {
+          slidesPerView: 1,
+        },
+      },
+    });
+
+    $('[data-fancybox="gallery"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close"
+      ],
+    });
+
+    $('[data-fancybox="diplome"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close",
+      ],
+    });
+
+    $('[data-fancybox="recommendation"]').fancybox({
+      animationEffect: "zoom-in-out",
+      animationDuration: 600,
+      transitionDuration: 1200,
+      buttons: [
+        "zoom",
+        "slideShow",
+        "thumbs",
+        "close",
+      ],
+    });
+
+    $.fancybox.defaults.hash = false;
+
+    $('.current-menu-item a').clone().prependTo('.art-current-page');
+
+    $('.menu-item').on('click', function() {
+      if ($(this).hasClass('menu-item-has-children')) {
+        $(this).children('.sub-menu').toggleClass('art-active');
+      } else {
+        $('.art-menu-bar-btn , .art-menu-bar , .art-info-bar , .art-content , .art-menu-bar-btn , .art-info-bar-btn').removeClass('art-active , art-disabled');
+      }
+    });
+
+  })
+
+});
